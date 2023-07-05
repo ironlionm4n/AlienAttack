@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://chv7v55senfol"]
+
+[ext_resource type="Texture2D" uid="uid://byvlnilnxhggi" path="res://Assets/Art/alien_attack_assets/textures/bg.png" id="1_y52v6"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1295.0
+offset_bottom = 736.0
+texture = ExtResource("1_y52v6")
+stretch_mode = 1
