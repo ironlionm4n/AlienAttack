@@ -9,9 +9,9 @@ public partial class EnemySpawner : Node2D
 
     public override void _Ready()
     {
-        base._Ready();
         _enemy = (PackedScene) GD.Load("res://Scenes/BasicEnemy.tscn");
         _spawnPositions = (Node2D) GetNode("SpawnPositions");
+        base._Ready();
     }
 
     /// <summary>

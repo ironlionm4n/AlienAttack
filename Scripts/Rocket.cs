@@ -10,16 +10,15 @@ public partial class Rocket : Area2D
 
     public override void _Ready()
     {
-        base._Ready();
         _notifier = GetNode<VisibleOnScreenNotifier2D>("VisibleNotifier");
         _notifier.Connect("screen_exited", new Callable(this, nameof(OnScreenExited)));
+        base._Ready();
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        base._PhysicsProcess(delta);
-
         GlobalPosition += new Vector2(rocketSpeed * (float)delta, 0);
+        base._PhysicsProcess(delta);
     }
 
     private void OnScreenExited()

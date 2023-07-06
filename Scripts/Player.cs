@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 namespace AlienAttack.Scripts;
@@ -7,12 +8,12 @@ public partial class Player :
 {
 	[Export(PropertyHint.TypeString, "How fast the player moves")]
 	private float moveSpeed;
-
 	private Vector2 _desiredVelocity;
 	private float _shipOffset = 33f;
 	private PackedScene _rocketScene;
 	private Node _rocketContainer;
-
+	public static event Action<Player> TookDamage;
+	
 	public override void _Ready()
 	{
 		base._Ready();
@@ -29,8 +30,6 @@ public partial class Player :
 		}
 	}
 
-
-
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
@@ -38,7 +37,6 @@ public partial class Player :
 		_desiredVelocity = Vector2.Zero;
 		
 		InputCheck();
-
 
 		Velocity = _desiredVelocity;
 		MoveAndSlide();
@@ -86,6 +84,10 @@ public partial class Player :
 		rocketInstance.GlobalPosition =
 			new Vector2(rocketInstance.GlobalPosition.X + 80f, rocketInstance.GlobalPosition.Y);
 	}
-	
+
+	public void PlayerTakeDamage()
+	{
+		TookDamage?.Invoke(this);
+	}
 	
 }
