@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://f4mo1y6l8euk"]
+
+[ext_resource type="Script" path="res://Scripts/EnemySpawner.cs" id="1_mguk4"]
+
+[node name="EnemySpawner" type="Node2D"]
+position = Vector2(2, 0)
+script = ExtResource("1_mguk4")
+
+[node name="SpawnPositions" type="Node2D" parent="."]
+
+[node name="SpawnPos_1" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1365, 45)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_2" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1365, 90)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_3" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1365, 135)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_4" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1365, 180)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_5" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1365, 225)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_6" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1365, 270)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_7" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1366, 317)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_8" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1366, 362)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_9" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1366, 407)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_10" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1366, 452)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_11" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1366, 497)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_12" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1366, 542)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_13" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1365, 592)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_14" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1365, 637)
+gizmo_extents = 20.0
+
+[node name="SpawnPos_15" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(1365, 682)
+gizmo_extents = 20.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
