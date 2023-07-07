@@ -1,12 +1,13 @@
 using Godot;
-using System;
-using AlienAttack.Scripts;
+
+namespace AlienAttack.Scripts;
 
 public partial class Hud : Control
 {
 	private string _scoreText = "SCORE: ";
 	private Label _scoreLabel;
 	private int _currentScore;
+	public int CurrentScore => _currentScore;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
