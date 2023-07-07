@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyjgp4gjn3pc8"]
+
+[ext_resource type="FontFile" uid="uid://5uxdxicanx7h" path="res://Assets/Art/alien_attack_assets/font/Kenney Blocks.ttf" id="1_6jgf3"]
+[ext_resource type="Script" path="res://Scenes/Hud.cs" id="1_7ew4n"]
+[ext_resource type="Texture2D" uid="uid://c7ddsurn6rtt6" path="res://Assets/Art/alien_attack_assets/textures/player_ship.png" id="3_q8tfc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_255nu"]
+font = ExtResource("1_6jgf3")
+font_size = 48
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ew4n")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 373.0
+offset_bottom = 90.0
+text = "SCORE: 9999"
+label_settings = SubResource("LabelSettings_255nu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 0
+offset_left = 844.0
+offset_top = 674.0
+offset_right = 1344.0
+offset_bottom = 724.0
+theme_override_constants/separation = 112
+alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Control"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_q8tfc")
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Control2"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_q8tfc")
+
+[node name="Control3" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Control3"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_q8tfc")
