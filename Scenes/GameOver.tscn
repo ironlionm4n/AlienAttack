@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://5dm4xnon2eg5"]
+
+[ext_resource type="Script" path="res://Scripts/GameOver.cs" id="1_5bv0e"]
+[ext_resource type="FontFile" uid="uid://5uxdxicanx7h" path="res://Assets/Art/alien_attack_assets/font/Kenney Blocks.ttf" id="1_lgn6o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6o0h4"]
+bg_color = Color(0.537255, 0.188235, 0.180392, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_l1tmj"]
+font = ExtResource("1_lgn6o")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_td036"]
+font = ExtResource("1_lgn6o")
+font_size = 48
+font_color = Color(0, 1, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7d706"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5bv0e")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -157.0
+offset_right = 230.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6o0h4")
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 99.0
+grow_horizontal = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_l1tmj")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -40.0
+offset_right = 157.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 9999"
+label_settings = SubResource("LabelSettings_td036")
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 92.0
+offset_top = -100.0
+offset_right = -92.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_lgn6o")
+theme_override_font_sizes/font_size = 49
+theme_override_styles/normal = SubResource("StyleBoxFlat_7d706")
+text = "Retry
+"
+
+[connection signal="pressed" from="Panel/Retry" to="." method="OnRetryPressed"]

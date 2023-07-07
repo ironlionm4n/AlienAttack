@@ -1,14 +1,17 @@
-using Godot;
 using System;
-using AlienAttack.Scripts;
+using Godot;
+
+namespace AlienAttack.Scripts;
 
 public partial class Game : Node2D
 {
     private int _lives = 3;
-    private Hud _hud;
+    private AlienAttack.Scripts.Hud _hud;
+    public static event Action<int> PlayerDied;
+
     public override void _Ready()
     {
-        _hud = (Hud) GetNode("UI/HUD");
+        _hud = (AlienAttack.Scripts.Hud) GetNode("UI/HUD");
         _hud.SetScoreLabel();
         Player.TookDamage += OnTookDamage;
         base._Ready();
@@ -32,6 +35,12 @@ public partial class Game : Node2D
         if (_lives <= 0)
         {
             player.QueueFree();
+            var packedScene = (PackedScene)GD.Load("res://Scenes/GameOver.tscn");
+            var gameOverInstance = packedScene.Instantiate();
+            var uiCanvas = GetNode("UI");
+            uiCanvas.AddChild(gameOverInstance);
+            var gameOver = (GameOver)gameOverInstance;
+            gameOver.SetScore(_hud.CurrentScore);
         }
     }
 }

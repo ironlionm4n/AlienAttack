@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyjgp4gjn3pc8"]
 
+[ext_resource type="Script" path="res://Scripts/Hud.cs" id="1_5bxc5"]
 [ext_resource type="FontFile" uid="uid://5uxdxicanx7h" path="res://Assets/Art/alien_attack_assets/font/Kenney Blocks.ttf" id="1_6jgf3"]
-[ext_resource type="Script" path="res://Scenes/Hud.cs" id="1_7ew4n"]
 [ext_resource type="Texture2D" uid="uid://c7ddsurn6rtt6" path="res://Assets/Art/alien_attack_assets/textures/player_ship.png" id="3_q8tfc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_255nu"]
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7ew4n")
+script = ExtResource("1_5bxc5")
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
