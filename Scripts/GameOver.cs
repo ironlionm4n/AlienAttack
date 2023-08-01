@@ -22,5 +22,5 @@ public partial class GameOver : Control
         scoreLabel.Text = "SCORE: " + newScore;
     }
 
-	private void OnRetryPressed() => GetTree().ReloadCurrentScene();
+    private void OnRetryPressed() => GetTree().ReloadCurrentScene();
 }
