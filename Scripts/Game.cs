@@ -1,17 +1,18 @@
-using System;
 using Godot;
+using System;
 
 namespace AlienAttack.Scripts;
 
 public partial class Game : Node2D
 {
     private int _lives = 3;
-    private AlienAttack.Scripts.Hud _hud;
+    private Hud _hud;
+
     public static event Action<int> PlayerDied;
 
     public override void _Ready()
     {
-        _hud = (AlienAttack.Scripts.Hud) GetNode("UI/HUD");
+        _hud = (Hud)GetNode("UI/HUD");
         _hud.SetScoreLabel();
         Player.TookDamage += OnTookDamage;
         base._Ready();
@@ -23,10 +24,7 @@ public partial class Game : Node2D
         base._ExitTree();
     }
 
-    private void OnDeathZoneEntered(Area2D area2D)
-    {
-        (area2D as Enemy)?.Die();
-    }
+    private void OnDeathZoneEntered(Area2D area2D) => (area2D as Enemy)?.Die();
 
     private void OnTookDamage(Player player)
     {

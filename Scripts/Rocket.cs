@@ -1,5 +1,5 @@
-using System;
 using Godot;
+using System;
 
 namespace AlienAttack.Scripts;
 
@@ -8,7 +8,9 @@ public partial class Rocket : Area2D
     [Export] private float rocketSpeed;
 
     private VisibleOnScreenNotifier2D _notifier;
+
     public static event Action PlayerKilledEnemy;
+
     public override void _Ready()
     {
         _notifier = GetNode<VisibleOnScreenNotifier2D>("VisibleNotifier");
@@ -22,10 +24,7 @@ public partial class Rocket : Area2D
         base._PhysicsProcess(delta);
     }
 
-    private void OnScreenExited()
-    {
-        QueueFree();
-    }
+    private void OnScreenExited() => QueueFree();
 
     private void OnAreaEntered(Area2D area2D)
     {
