@@ -23,12 +23,9 @@ public partial class Game : Node2D
         base._ExitTree();
     }
 
-    private void OnDeathZoneEntered(Area2D area2D)
-    {
-        (area2D as Enemy)?.Die();
-    }
+	private void OnDeathZoneEntered(Area2D area2D) => (area2D as Enemy)?.Die();
 
-    private void OnTookDamage(Player player)
+	private void OnTookDamage(Player player)
     {
         _lives--;
         _hud.SetLivesLeft(_lives);

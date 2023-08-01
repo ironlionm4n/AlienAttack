@@ -85,9 +85,6 @@ public partial class Player :
 			new Vector2(rocketInstance.GlobalPosition.X + 80f, rocketInstance.GlobalPosition.Y);
 	}
 
-	public void PlayerTakeDamage()
-	{
-		TookDamage?.Invoke(this);
-	}
-	
+	public void PlayerTakeDamage() => TookDamage?.Invoke(this);
+
 }

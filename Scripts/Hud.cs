@@ -28,10 +28,8 @@ public partial class Hud : Control
 		SetScoreLabel(_currentScore);
 	}
 
-	public void SetScoreLabel(int newScore = 0)
-	{
+	public void SetScoreLabel(int newScore = 0) => 
 		_scoreLabel.Text = _scoreText + newScore;
-	}
 
 	public void SetLivesLeft(int lives)
 	{

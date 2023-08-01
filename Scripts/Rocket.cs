@@ -22,12 +22,9 @@ public partial class Rocket : Area2D
         base._PhysicsProcess(delta);
     }
 
-    private void OnScreenExited()
-    {
-        QueueFree();
-    }
+	private void OnScreenExited() => QueueFree();
 
-    private void OnAreaEntered(Area2D area2D)
+	private void OnAreaEntered(Area2D area2D)
     {
         var enemy = (Enemy)area2D;
         if (enemy != null)
